@@ -56,8 +56,13 @@ app.post('/api/upload', (request, response) => {
 })
 
 app.use(express.static(path.join(__dirname, '/dist/')))
-app.get('/.*/', (req, res) => res.sendFile(path.join(__dirname, '/dist/index.html')))
+// app.get('/.*/', (req, res) => res.sendFile(path.join(__dirname, '/dist/index.html')))
+const PORT = process.env.PORT || 3000
 
-app.listen(5000, () => {
-  console.log('server has been started at http://localhost:5000')
+app.get('/', (req, res) => {
+  res.end('<h1>hello</h1>')
+})
+
+app.listen(PORT, () => {
+  console.log('Server has been started: ' + PORT)
 })
