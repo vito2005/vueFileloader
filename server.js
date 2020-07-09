@@ -1,6 +1,7 @@
 const express = require('express')
 const fs = require('fs')
 const path = require('path')
+const PORT = process.env.PORT || 3000
 
 const app = express()
 const fileStorage = {}
@@ -56,12 +57,8 @@ app.post('/api/upload', (request, response) => {
 })
 
 app.use(express.static(path.join(__dirname, '/dist/')))
-// app.get('/.*/', (req, res) => res.sendFile(path.join(__dirname, '/dist/index.html')))
-const PORT = process.env.PORT || 3000
 
-app.get('/', (req, res) => {
-  res.end('<h1>hello</h1>')
-})
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/dist/index.html')))
 
 app.listen(PORT, () => {
   console.log('Server has been started: ' + PORT)
