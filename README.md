@@ -9,3 +9,7 @@ npm intstall
 npm run build
 
 npm run start
+
+Demo: https://vue-fileloader.herokuapp.com/
+
+
