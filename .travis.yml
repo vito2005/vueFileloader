@@ -1,4 +1,3 @@
-language: node_js
 jobs:
     include:
       - stage: deploy to production
