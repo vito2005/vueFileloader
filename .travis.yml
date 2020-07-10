@@ -1,0 +1,9 @@
+language: node_js
+jobs:
+    include:
+      - stage: deploy to production
+        script: skip
+        deploy: &heroku
+        provider: heroku
+        app: vue-fileloader
+        api_key: 450b098a-edea-40c3-81a3-b230d0bc21bf
